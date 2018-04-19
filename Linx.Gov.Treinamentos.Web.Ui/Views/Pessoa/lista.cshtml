@@ -1,0 +1,75 @@
+﻿@*Aqui nos determinamos que as informações que estão chegando sao do tipo List<LGroup.SisCadastro.Model.PessoaMOD>*@
+@model List<Linx.Gov.Treinamentos.Model.PessoaMod>
+@{
+    ViewBag.Title = " - Lista de Clientes";
+    Layout = "~/Views/Shared/_LayoutSystema.cshtml";
+    ViewBag.keywords = "Lista de Clientes Cadastrados, Lista, Cliente, Cadastro";
+}
+
+@if (TempData["MensagemOK"] != null)
+{
+
+    <div class="alert alert-info alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+        <strong>@TempData["MensagemOK"] </strong>
+    </div>
+}
+
+@if (TempData["MensagenErro"] != null)
+{
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+        <strong>@TempData["MensagemErro"] </strong>
+    </div>
+}
+
+
+
+<h2 class="text-center text-uppercase">lista de Clientes</h2>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Excluir</th>
+            <th>Editar</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>E-mail</th>
+            <th>Data de Nacimento</th>
+            <th>Genero</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*
+            //Com a variavel interna chamada Model nos conseguimos acessar os dados recebidos
+            //pela controller
+            //com a lista que possuimos podemos fazer o foreach
+        *@
+        @foreach (var itemModel in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    <a href="Javascript:exibirAlert('@itemModel.Nome', '@itemModel.Id')">
+                        <span class="glyphicon glyphicon-remove text-danger" style="font-size: 20px"></span>
+                    </a>
+                </td>
+                <td class="text-center">
+                    <a href="/Pessoa/Editar/@itemModel.Id">
+                        <span class="glyphicon glyphicon-edit" style="font-size: 20px"></span>
+                    </a>
+                </td>
+                <td>@itemModel.Nome</td>
+                <td>@itemModel.endereco</td>
+                <td>@itemModel.Email</td>
+                <td>@itemModel.DataNascimento</td>
+                <td>@itemModel.Genero.Descricao</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">Total de Registros: @Model.Count</td>
+        </tr>
+    </tfoot>
+</table>
+

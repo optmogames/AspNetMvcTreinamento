@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="treinamentoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TB_GENERO">
+    <Key>
+      <PropertyRef Name="ID_GENERO" />
+    </Key>
+    <Property Name="ID_GENERO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DS_GENERO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TB_PESSOA" Relationship="Self.FK_TB_PESSOA_ToTable" FromRole="TB_GENERO" ToRole="TB_PESSOA" />
+  </EntityType>
+  <EntityType Name="TB_PESSOA">
+    <Key>
+      <PropertyRef Name="ID_PESSOA" />
+    </Key>
+    <Property Name="ID_PESSOA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NM_PESSOA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EN_PESSOA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EM_PESSOA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DTNASC_PESSOA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_GENERO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TB_GENERO" Relationship="Self.FK_TB_PESSOA_ToTable" FromRole="TB_PESSOA" ToRole="TB_GENERO" />
+  </EntityType>
+  <Association Name="FK_TB_PESSOA_ToTable">
+    <End Role="TB_GENERO" Type="Self.TB_GENERO" Multiplicity="1" />
+    <End Role="TB_PESSOA" Type="Self.TB_PESSOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_GENERO">
+        <PropertyRef Name="ID_GENERO" />
+      </Principal>
+      <Dependent Role="TB_PESSOA">
+        <PropertyRef Name="ID_GENERO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="treinamentoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_GENERO" EntityType="Self.TB_GENERO" />
+    <EntitySet Name="TB_PESSOA" EntityType="Self.TB_PESSOA" />
+    <AssociationSet Name="FK_TB_PESSOA_ToTable" Association="Self.FK_TB_PESSOA_ToTable">
+      <End Role="TB_GENERO" EntitySet="TB_GENERO" />
+      <End Role="TB_PESSOA" EntitySet="TB_PESSOA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

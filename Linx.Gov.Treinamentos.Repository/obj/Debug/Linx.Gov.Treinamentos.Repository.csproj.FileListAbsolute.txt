@@ -1,0 +1,13 @@
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\Linx.Gov.Treinamentos.Repository.dll.config
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\Linx.Gov.Treinamentos.Repository.dll
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\Linx.Gov.Treinamentos.Repository.pdb
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\EntityFramework.dll
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\Linx.Gov.Treinamentos.Model.dll
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\Linx.Gov.Treinamentos.Model.pdb
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\EntityFramework.xml
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\obj\Debug\Linx.Gov.Treinamentos.Repository.csprojResolveAssemblyReference.cache
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\obj\Debug\Linx.Gov.Treinamentos.Repository.csproj.CoreCompileInputs.cache
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\obj\Debug\Linx.Gov.Treinamentos.Repository.dll
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Repository\obj\Debug\Linx.Gov.Treinamentos.Repository.pdb

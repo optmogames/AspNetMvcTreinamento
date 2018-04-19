@@ -1,0 +1,27 @@
+﻿@*Aqui nos definimos que o modelo de dados aplicado a pagina sera do tipo pessoaMod, sendo assim os dados enviados e recebidos
+    por esta pagina devem ter este tipo de dados*@
+
+@*@model LGroup.SisCadastro.Model.PessoaMOD*@
+
+@{
+    Layout = "~/Views/Shared/_LayoutSystema.cshtml";
+    ViewBag.Title = "Home Page";
+    ViewBag.Keywords = "Página Inicial, Sistema de Cadastro, Meu Sistema";
+}
+
+@*Dentro do nosso Beginform nos devemos passar os segintes parametros
+    1 nome da action que vai receber
+    2 informaçoes da controller
+    3 formMrtod.post ou .Get*@
+@using (Html.BeginForm("CadastrodeCliente", "Pessoa", FormMethod.Post))
+{
+    @Html.Partial("~/Views/Shared/_PartialFormulario.cshtml")
+
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Enviar Cadastro</button>
+        <button class="btn btn-default" type="reset">Apagar Informações</button>
+    </div>
+
+
+}

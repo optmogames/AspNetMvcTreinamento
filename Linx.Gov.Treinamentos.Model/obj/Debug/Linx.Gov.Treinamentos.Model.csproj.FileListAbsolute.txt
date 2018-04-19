@@ -1,0 +1,6 @@
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Model\bin\Debug\Linx.Gov.Treinamentos.Model.dll
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Model\bin\Debug\Linx.Gov.Treinamentos.Model.pdb
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Model\obj\Debug\Linx.Gov.Treinamentos.Model.csprojResolveAssemblyReference.cache
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Model\obj\Debug\Linx.Gov.Treinamentos.Model.csproj.CoreCompileInputs.cache
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Model\obj\Debug\Linx.Gov.Treinamentos.Model.dll
+C:\Users\ulisses.santos\source\repos\Linx.Gov.Treinamentos\Linx.Gov.Treinamentos.Model\obj\Debug\Linx.Gov.Treinamentos.Model.pdb

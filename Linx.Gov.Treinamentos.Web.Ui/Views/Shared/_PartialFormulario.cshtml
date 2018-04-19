@@ -1,0 +1,57 @@
+﻿@model Linx.Gov.Treinamentos.Model.PessoaMod
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            @*Aqui nos referenciamos a nossa label a propriedade da nossa classe de modelo*@
+            @Html.LabelFor(x => x.Nome)
+            @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", placeholder = "Digite seu Nome:" })
+            @Html.ValidationMessageFor(x => x.Nome)
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            @Html.LabelFor(x => x.endereco)
+            @Html.TextBoxFor(x => x.endereco, new { @class = "form-control", placeholder = "Digite seu Endereço:" })
+            @Html.ValidationMessageFor(x => x.endereco)
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(x => x.Email)
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Digite seu E-mail:" })
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(x => x.DataNascimento)
+            @Html.TextBoxFor(x => x.DataNascimento, new { @class = "form-control", placeholder = "Digite sua Data de Nascimento:", type = "date", @Value = Model.DataNascimento.ToString("yyyy-MM-dd") })
+            @Html.ValidationMessageFor(x => x.DataNascimento)
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <div class="form-group">
+                @Html.LabelFor(x => x.Genero.Descricao)
+
+                @Html.DropDownListFor(x => x.Genero.Id, ViewBag.Generos as SelectList,
+    new { @Class = "form-control" })
+
+                @*@Html.DropDownListFor(x => x.Genero.Id, new SelectList(new List<Object>
+                    {
+                        new {Value = "1", Text = "Masculino"},
+                        new {Value = "2", Text = "Feminino"}
+                    },"Value","Text"),new { @class="form-control" })*@
+                @* @Html.TextBoxFor(x => x.Genero, new { @class = "form-control", placeholder = "Digite seu Genero:" })*@
+            </div>
+        </div>
+    </div>
+</div>
+
+

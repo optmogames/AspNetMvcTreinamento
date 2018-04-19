@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta content="Linx - @ViewBag.Keywords" name="keywords" />
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @*Aqui nos Referenciamos as bibliotecas Css*@
+
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    @*Aqui nos Referenciamos as bibliotecas Css*@
+
+    <link href="https://bootswatch.com/cerulean/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Linx</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Treinamento</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cadastro de Cliente", "Index", "Pessoa")</li>
+                            <li>@Html.ActionLink("Lista de Cliente", "Lista", "Pessoa")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
+    <section class="container">
+        @RenderBody()
+    </section>
+    <footer>
+        <div class="nav navbar-fixed-bottom">
+            <p class="text-center"><small>Todos Direitos Reservados a Linx &reg;</small></p>
+        </div>
+    </footer>
+    @*Aqui nos Referenciamos as bibliotecas JAVASCRIPT*@
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    @*Aqui nos Referenciamos as bibliotecas JAVASCRIPT*@
+
+    @*Importar arquivos de Validaçao*@
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.bootstrap.min.js"></script>
+    @*Importar arquivos de Validaçao*@
+
+    @* aqui importamos a biblioteca de msg de alert *@
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/scripts/bootbox.min.js"></script>
+
+    <script>
+        function exibirAlert(nome, id) {
+            console.log(nome + " " + id);
+            bootbox.confirm("Deseja realmente excluir o usuário" + nome, function (resultado) {
+                if (resultado) {
+                    //aqui chamamos uma action da nossa controller responsavel por excluir
+                    document.location.href = "/Pessoa/Excluir/" + id
+                }})
+        }
+    </script>
+</body>
+</html>

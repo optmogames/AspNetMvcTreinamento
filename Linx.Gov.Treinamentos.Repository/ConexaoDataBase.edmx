@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="treinamentoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TB_GENERO">
+          <Key>
+            <PropertyRef Name="ID_GENERO" />
+          </Key>
+          <Property Name="ID_GENERO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DS_GENERO" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_PESSOA">
+          <Key>
+            <PropertyRef Name="ID_PESSOA" />
+          </Key>
+          <Property Name="ID_PESSOA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NM_PESSOA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EN_PESSOA" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EM_PESSOA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DTNASC_PESSOA" Type="datetime" Nullable="false" />
+          <Property Name="ID_GENERO" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TB_PESSOA_ToTable">
+          <End Role="TB_GENERO" Type="Self.TB_GENERO" Multiplicity="1" />
+          <End Role="TB_PESSOA" Type="Self.TB_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_GENERO">
+              <PropertyRef Name="ID_GENERO" />
+            </Principal>
+            <Dependent Role="TB_PESSOA">
+              <PropertyRef Name="ID_GENERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="treinamentoModelStoreContainer">
+          <EntitySet Name="TB_GENERO" EntityType="Self.TB_GENERO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PESSOA" EntityType="Self.TB_PESSOA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TB_PESSOA_ToTable" Association="Self.FK_TB_PESSOA_ToTable">
+            <End Role="TB_GENERO" EntitySet="TB_GENERO" />
+            <End Role="TB_PESSOA" EntitySet="TB_PESSOA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="treinamentoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TB_GENERO">
+          <Key>
+            <PropertyRef Name="ID_GENERO" />
+          </Key>
+          <Property Name="ID_GENERO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DS_GENERO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TB_PESSOA" Relationship="Self.FK_TB_PESSOA_ToTable" FromRole="TB_GENERO" ToRole="TB_PESSOA" />
+        </EntityType>
+        <EntityType Name="TB_PESSOA">
+          <Key>
+            <PropertyRef Name="ID_PESSOA" />
+          </Key>
+          <Property Name="ID_PESSOA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NM_PESSOA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EN_PESSOA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EM_PESSOA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DTNASC_PESSOA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ID_GENERO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_GENERO" Relationship="Self.FK_TB_PESSOA_ToTable" FromRole="TB_PESSOA" ToRole="TB_GENERO" />
+        </EntityType>
+        <Association Name="FK_TB_PESSOA_ToTable">
+          <End Role="TB_GENERO" Type="Self.TB_GENERO" Multiplicity="1" />
+          <End Role="TB_PESSOA" Type="Self.TB_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_GENERO">
+              <PropertyRef Name="ID_GENERO" />
+            </Principal>
+            <Dependent Role="TB_PESSOA">
+              <PropertyRef Name="ID_GENERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="treinamentoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_GENERO" EntityType="Self.TB_GENERO" />
+          <EntitySet Name="TB_PESSOA" EntityType="Self.TB_PESSOA" />
+          <AssociationSet Name="FK_TB_PESSOA_ToTable" Association="Self.FK_TB_PESSOA_ToTable">
+            <End Role="TB_GENERO" EntitySet="TB_GENERO" />
+            <End Role="TB_PESSOA" EntitySet="TB_PESSOA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="treinamentoModelStoreContainer" CdmEntityContainer="treinamentoEntities">
+          <EntitySetMapping Name="TB_GENERO">
+            <EntityTypeMapping TypeName="treinamentoModel.TB_GENERO">
+              <MappingFragment StoreEntitySet="TB_GENERO">
+                <ScalarProperty Name="ID_GENERO" ColumnName="ID_GENERO" />
+                <ScalarProperty Name="DS_GENERO" ColumnName="DS_GENERO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PESSOA">
+            <EntityTypeMapping TypeName="treinamentoModel.TB_PESSOA">
+              <MappingFragment StoreEntitySet="TB_PESSOA">
+                <ScalarProperty Name="ID_PESSOA" ColumnName="ID_PESSOA" />
+                <ScalarProperty Name="NM_PESSOA" ColumnName="NM_PESSOA" />
+                <ScalarProperty Name="EN_PESSOA" ColumnName="EN_PESSOA" />
+                <ScalarProperty Name="EM_PESSOA" ColumnName="EM_PESSOA" />
+                <ScalarProperty Name="DTNASC_PESSOA" ColumnName="DTNASC_PESSOA" />
+                <ScalarProperty Name="ID_GENERO" ColumnName="ID_GENERO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="treinamentoModelStoreContainer" CdmEntityContainer="treinamentoEntities">
+    <EntitySetMapping Name="TB_GENERO">
+      <EntityTypeMapping TypeName="treinamentoModel.TB_GENERO">
+        <MappingFragment StoreEntitySet="TB_GENERO">
+          <ScalarProperty Name="ID_GENERO" ColumnName="ID_GENERO" />
+          <ScalarProperty Name="DS_GENERO" ColumnName="DS_GENERO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PESSOA">
+      <EntityTypeMapping TypeName="treinamentoModel.TB_PESSOA">
+        <MappingFragment StoreEntitySet="TB_PESSOA">
+          <ScalarProperty Name="ID_PESSOA" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="NM_PESSOA" ColumnName="NM_PESSOA" />
+          <ScalarProperty Name="EN_PESSOA" ColumnName="EN_PESSOA" />
+          <ScalarProperty Name="EM_PESSOA" ColumnName="EM_PESSOA" />
+          <ScalarProperty Name="DTNASC_PESSOA" ColumnName="DTNASC_PESSOA" />
+          <ScalarProperty Name="ID_GENERO" ColumnName="ID_GENERO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
